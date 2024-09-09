@@ -15,9 +15,14 @@ else :
     print('size not valid')
 
 if pepperoni == 'Y' :
-    bill += 3
-else :
+    if size == 'S' :
+        bill += 2
+    else : 
+        bill += 3
+elif pepperoni == 'N':
     bill = bill
+else :
+    print('size not valid')
 
 if extra_cheese == 'Y' :
     bill += 1
