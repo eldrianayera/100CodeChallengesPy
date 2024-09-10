@@ -60,8 +60,7 @@ elif direction == "decode" :
     decrypt(text, shift)
 
 else :
-    print('Try again 3')
-    print(text)
-    print(shift)
+    print('Try again by input decode or encode')
+  
 
 
