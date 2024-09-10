@@ -39,7 +39,7 @@ def decrypt(original_text,shift_amount)  :
         if char != " " :
             original_index = alphabet.index(char)
             shifted_index = original_index - shift_amount
-            if shifted_index < 1 :
+            if shifted_index < 0 :
                 shifted_index += 26
             new_char = alphabet[shifted_index]
             shifted_array.append(new_char)
@@ -53,10 +53,15 @@ def decrypt(original_text,shift_amount)  :
     
         
 if direction == "encode" :
+    
     encrypt(text,shift)
+
 elif direction == "decode" :
-    decrypt(text,shift)
+    decrypt(text, shift)
+
 else :
-    print('Try again')
+    print('Try again 3')
+    print(text)
+    print(shift)
 
 
