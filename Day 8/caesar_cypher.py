@@ -19,34 +19,44 @@ shift = int(input("Type the shift number:\n"))
 def encrypt(original_text,shift_amount)  :
     shifted_array = []
     for char in original_text :
-        original_index = alphabet.index(char)
-        shifted_index = original_index + shift_amount
-        if shifted_index > 26 :
-            shifted_index -= 26
-        new_char = alphabet[shifted_index]
-        shifted_array.append(new_char)
-        
+        if char != ' ' :
+            original_index = alphabet.index(char)
+            shifted_index = original_index + shift_amount
+            if shifted_index > 26 :
+                shifted_index -= 26
+            new_char = alphabet[shifted_index]
+            shifted_array.append(new_char)
+        else :
+            shifted_array.append(' ')
+
+            
     encrypted = ''.join(shifted_array)
     print(f'Your encrypted password is : {encrypted}')
 
 def decrypt(original_text,shift_amount)  :
     shifted_array = []
     for char in original_text :
-        original_index = alphabet.index(char)
-        shifted_index = original_index - shift_amount
-        new_char = alphabet[shifted_index]
-        shifted_array.append(new_char)
+        if char != " " :
+            original_index = alphabet.index(char)
+            shifted_index = original_index - shift_amount
+            if shifted_index < 1 :
+                shifted_index += 26
+            new_char = alphabet[shifted_index]
+            shifted_array.append(new_char)
+        if char == ' ' :
+            shifted_array.append(char)
+
         
     decrypted = ''.join(shifted_array)
     print(f'Your decrypted password is : {decrypted}')
 
     
         
-# if direction == 'decode' :
-#     decrypt(text,shift)
-# elif direction == 'encode' :
-#     encrypt(text,shift)
-# elif direction != 'decode' and direction != 'encode' :
-#     print('try again')
+if direction == "encode" :
+    encrypt(text,shift)
+elif direction == "decode" :
+    decrypt(text,shift)
+else :
+    print('Try again')
 
-encrypt(text,shift)
+
