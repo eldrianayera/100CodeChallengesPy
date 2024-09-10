@@ -23,3 +23,4 @@ for num in range(0,nr_numbers) :
 
 randomize = random.shuffle(array)
 print(''.join(array))
+
