@@ -12,7 +12,17 @@ def play() :
     else :
         life = 5
     while life > 0 :
-        guess = input('Make a guess : ')
+        print(f'You have {life} attempts remaining to guess the number')
+        guess = int(input('Make a guess : '))
+        if guess == answer :
+            print(f'You guess the right number : {guess}')
+            break
+        else :
+            life -= 1
+            if guess > answer :
+                print('Too high\nTry again.')
+            else :
+                print('Too low\nTry again.')
 
 play()
 
