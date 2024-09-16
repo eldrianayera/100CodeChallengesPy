@@ -24,6 +24,5 @@ while is_on :
             print('LANJOT')
             while money_machine.make_payment(drink.cost) == False :
                 print('Try again')
+            coffee_maker.make_coffee(drink)
 
-        else :
-            print('HABIS BOS')
