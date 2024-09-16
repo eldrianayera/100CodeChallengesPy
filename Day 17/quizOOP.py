@@ -19,3 +19,9 @@ print(user_1.following)
 print(user_2.following)
 
 
+class Question :
+
+    def __init__(self , que , ans):
+        self.que = que
+        self.ans = ans
+
