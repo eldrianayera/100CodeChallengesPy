@@ -7,10 +7,23 @@ coffee_maker = CoffeeMaker()
 menu = Menu()
 
 is_on= True
-order =  (menu.find_drink(input('What do you want to order ?') ))
 
 
-print(money_machine.report())
-print(coffee_maker.report())
-print(order)
-print(coffee_maker.is_resource_sufficient(order))
+
+while is_on :
+    options = menu.get_items()
+    choice = input(f'What would you like {options} : ')
+    if choice == 'off' :
+        is_on = False
+    elif choice == 'report' :
+        coffee_maker.report()
+        money_machine.report()
+    else :
+        drink = menu.find_drink(choice)
+        if coffee_maker.is_resource_sufficient(drink) :
+            print('LANJOT')
+            while money_machine.make_payment(drink.cost) == False :
+                print('Try again')
+
+        else :
+            print('HABIS BOS')
