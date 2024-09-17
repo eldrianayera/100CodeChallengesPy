@@ -24,24 +24,25 @@ for turtle in turtle_member :
     index += 1
     turtle.shape('turtle')
     turtle.penup()
-    turtle.teleport(start_x , start_y)
+    turtle.goto(start_x , start_y)
     start_y += 50
 
 def check_finish():
     for turtle in turtle_member :
-        print(turtle.pos()[0])
         if turtle.pos()[0] > 220 :
-            return True
+            tuple = turtle.color()[0]
+            winner = str(tuple)
+            return winner.upper()
 
 def start_the_race() :
     race_on = True
     while race_on :
         if check_finish() :
             race_on = False
-
+            print(f'Race Finish !\n{check_finish()} turtle is the winner ')
         else :
             for turtle in turtle_member :
-                screen.ontimer(turtle.forward(random.randint(10,30)) , 100)
+                (turtle.forward(random.randint(10,20)))
 
 
 
