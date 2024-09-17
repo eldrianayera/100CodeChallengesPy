@@ -42,15 +42,17 @@ def start_the_race() :
             print(f'Race Finish !\n{check_finish()} turtle is the winner ')
         else :
             for turtle in turtle_member :
-                (turtle.forward(random.randint(10,20)))
+                (turtle.forward(random.randint(1,50)))
 
 
 
 
 
-
+user = screen.textinput(title='Make your bet' , prompt='Which turtle is going to win 1 - 6 : ')
+if user :
+    start_the_race()
 screen.listen()
-screen.onkey(fun=start_the_race , key='space')
+
 
 
 screen.exitonclick()
