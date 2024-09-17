@@ -40,6 +40,11 @@ def start_the_race() :
         if check_finish() :
             race_on = False
             print(f'Race Finish !\n{check_finish()} turtle is the winner ')
+            if user == check_finish() :
+                print('You are right')
+            else :
+                print('You are wrong')
+
         else :
             for turtle in turtle_member :
                 (turtle.forward(random.randint(1,50)))
