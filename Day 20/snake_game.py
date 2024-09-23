@@ -30,7 +30,7 @@ while game_is_on:
 
     #detect collision 
     if snake.head.distance(food) < 15 :
-        food
+        food.refresh()
 
 
 
