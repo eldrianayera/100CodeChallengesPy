@@ -6,7 +6,6 @@ class Scoreboard(Turtle):
     def __init__(self): 
         super().__init__()
         self.hideturtle()
-        
         self.right = 0
         self.left = 0
         self.update_scoreboard()
@@ -16,10 +15,12 @@ class Scoreboard(Turtle):
         self.color('white')
         self.write(f'{self.left} : {self.right}',align=ALIGNMENT, font=FONT)
 
-    # def score(self,point) :
-    #     if point == 'RIGHT' :
-    #         self.right += 1 
-    #         self.update_score()
-    #     if point == 'LEFT' :
-    #         self.left += 1 
-    #         self.update_score()
+    def score(self,point) :
+        if point == 'left' :
+            self.right += 1 
+            self.clear()
+            self.update_scoreboard()
+        if point == 'right' :
+            self.left += 1 
+            self.clear()
+            self.update_scoreboard()
