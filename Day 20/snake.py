@@ -23,6 +23,8 @@ class Snake :
             new_segment.goto(position)
             self.segments.append(new_segment)
 
+    def extend(se;f)
+
     def move(self):
 
         for seg_num in range(len(self.segments) - 1, 0, -1):
