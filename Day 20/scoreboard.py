@@ -12,9 +12,14 @@ class Scoreboard(Turtle) :
         self.penup()
         self.goto(0,270)
         self.update_scoreboard()
+        self.high_score = 0
 
     def update_scoreboard(self) :
         self.write(f"Score: {self.score}" , align=ALIGNMENT, font=FONT)
+
+    def reset(self) :
+        if self.score > self.high_score :
+            self.high_score = self.score
     
     def game_over(self):
         self.goto(0,0)
@@ -24,5 +29,7 @@ class Scoreboard(Turtle) :
         self.score += 1
         self.clear()
         self.update_scoreboard()
+
+    def 
 
         

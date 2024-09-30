@@ -12,6 +12,7 @@ class Ball(Turtle) :
         self.y_move = 10
         self.left = 0
         self.right = 0
+        self.move_speed = 0.1 
 
     def move(self) :
         new_x = self.xcor() + self.x_move
@@ -23,10 +24,15 @@ class Ball(Turtle) :
     
     def paddle_bounce(self) :
         self.x_move  *= -1
-        print('KERAS BOI')
+        self.move_speed *= 0.9
+        if self.xcor() > 0:
+            self.setx(self.xcor() + 10)  # If on right side, move right
+        else:
+            self.setx(self.xcor() - 10)  # If on left side, move left
 
     def reset_position(self) :
         self.goto(0,0)
+        self.move_speed = 0.1
         self.paddle_bounce()
 
   
