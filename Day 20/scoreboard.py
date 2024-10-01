@@ -1,4 +1,6 @@
 from turtle import Turtle
+
+
 ALIGNMENT = 'center'
 FONT = ('Arial', 24 , 'normal')
 
@@ -7,7 +9,8 @@ class Scoreboard(Turtle) :
     def __init__(self) :
         super().__init__() 
         self.score = 0
-        self.high_score = 0
+        with open("data.txt") as data :
+            self.high_score = int(data.read())
         self.color('white')
         self.hideturtle()
         self.penup()
