@@ -3,3 +3,4 @@ with open('./Day 24/input/Letters/starting_letter.txt') as letter :
     print(go)
 
 
+with open
