@@ -22,13 +22,26 @@ def button_clicked():
     else : 
         my_label['text'] = 'Click Me Again !'
 
-button = Button(text= 'Click Me' , command = button_clicked)
-button.pack()
+click_me = Button(text= 'Click Me' , command = button_clicked)
+click_me.pack()
+
+
+def entry_string() :
+    if input.get() :
+        my_label['text'] = input.get()
+    else :
+        my_label['text'] = 'Nothing in input'
+
+
+buttton = Button(text= 'Change Label' , command = entry_string)
+buttton.pack()
+
 
 # Entry
 
 input = Entry(width = 10 )
 input.pack()
+
 
 
 window.mainloop()
