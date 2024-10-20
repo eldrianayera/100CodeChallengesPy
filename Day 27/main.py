@@ -17,8 +17,10 @@ my_label.config(text='New Text' , font =('Arial' , 25 , 'bold'))
 
 def button_clicked():
     print('I got clicked')
-    if my_label
-    my_label['text'] = 'I Got Clicked !'
+    if my_label['text'] != 'I Got Clicked !' :
+        my_label['text'] = 'I Got Clicked !'
+    else : 
+        my_label['text'] = 'Click Me Again !'
 
 button = Button(text= 'Click Me' , command = button_clicked)
 button.pack()
