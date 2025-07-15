@@ -21,7 +21,7 @@ print(score)
 
 print('Welcome to the bill calculator')
 total = float(input('What was the total bill ?\n'))
-tip_percent = float(input('How much tip would you like to give?\n'))
+tip_percent = float(input('How much tip would you like to give(%)?\n'))
 tip = total * (tip_percent / 100 )
 persons = float(input('How many people to split bill?\n'))
 final_amount = round(((total + tip)/persons),2)
